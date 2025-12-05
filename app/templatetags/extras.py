@@ -3,5 +3,5 @@ from django import template
 register = template.Library()
 
 @register.filter
-def attr(obj, attr_name):
-    return getattr(obj, attr_name)
+def dictlookup(obj, key):
+    return getattr(obj, key, "")

@@ -7,8 +7,7 @@ setTimeout(() => {
     });
 }, 4000);
 
-
-// --- Scroll suave hacia las secciones ---
+// --- Scroll suave ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         const destino = document.querySelector(this.getAttribute("href"));

@@ -6,19 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portafolio - Daniel Moya</title>
 
-    <!-- Bootstrap 5 CDN -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="../static/app/css/style.css">
+    <!-- TU CSS -->
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
   </head>
-  <body>
 
+  <body id="body">
+
+    <!-- NAV -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
       <div class="container">
         <a class="navbar-brand fw-bold" href="#">Daniel Moya</a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navMenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="#sobre">Sobre mí</a></li>
@@ -30,46 +35,47 @@
       </div>
     </nav>
 
-      {% if messages %}
+    <!-- MENSAJES -->
+    {% if messages %}
     <div class="container mt-3">
-        {% for message in messages %}
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        {% endfor %}
+      {% for message in messages %}
+      <div class="alert alert-success alert-dismissible fade show">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+      {% endfor %}
     </div>
     {% endif %}
 
     <main class="container my-5">
+
       <!-- HERO -->
       <section class="hero card-section mb-5">
         <div class="row align-items-center g-4">
+
           <div class="col-md-3 text-center">
-            <img src="../static/app/img/ChatGPT Image 28 nov 2025, 07_05_57 p.m..png" alt="Avatar" class="avatar">
+            <img src="{% static 'app/img/Moya.png' %}" class="avatar">
           </div>
 
           <div class="col-md-6">
             <h1 class="display-6 mb-1">Daniel Jose Moya Quiroz</h1>
             <p class="text-muted mb-2">Programador Junior · Desarrollador Web · Colombia</p>
-            <p class="mb-3">Construyo aplicaciones web usando Django, JavaScript y Bootstrap. Me encanta aprender tecnologías nuevas y colaborar en proyectos reales que resuelvan problemas.</p>
+            <p class="mb-3">Construyo aplicaciones web usando Django, JavaScript y Bootstrap.</p>
 
             <div class="d-flex gap-2">
-              <a href="{% static 'app/cv/Moya.pdf' %}" class="btn btn-cta btn-lg" download>
-              Descargar CV
-              </a>
+              <a href="{% static 'app/cv/Moya.pdf' %}" class="btn btn-cta btn-lg" download>Descargar CV</a>
               <a href="#contacto" class="btn btn-outline-primary btn-lg">Contáctame</a>
             </div>
           </div>
 
           <div class="col-md-3 text-md-end text-center">
             <div class="small text-muted mb-1">Ubicación</div>
-            <div>Medellin, Colombia</div>
+            <div>Medellín, Colombia</div>
+
             <div class="small text-muted mt-3">Redes</div>
-            <div class="mt-1">
-              <a class="btn btn-sm btn-outline-secondary me-1" href="https://github.com/DMoya-max" target="_blank">GitHub</a>
-            </div>
+            <a class="btn btn-sm btn-outline-secondary mt-1" href="https://github.com/DMoya-max" target="_blank">GitHub</a>
           </div>
+
         </div>
       </section>
 
@@ -82,9 +88,7 @@
               <p>
                 Soy un programador juniorapasionado por el desarrollo web y el aprendizaje constante. Me especializo en construir aplicaciones con Python, Django, HTML, CSS y JavaScript, siempre enfocado en escribir código limpio y funcional. Me considero una persona autodidacta, curiosa y comprometida con mejorar cada día mis habilidades técnicas.
               </p>
-              <p>
-                Me gusta trabajar en equipo, compartir ideas y adaptarme a nuevos retos. Mi objetivo es crecer profesionalmente dentro del mundo del desarrollo de software, aportar soluciones reales a proyectos y seguir ampliando mis conocimientos en tecnologías modernas. Aspiro a convertirme en desarrollador full stack y trabajar en proyectos que generen impacto positivo.
-              </p>
+              <p>Me gusta trabajar en equipo, compartir ideas y adaptarme a nuevos retos. Mi objetivo es crecer profesionalmente dentro del mundo del desarrollo de software, aportar soluciones reales a proyectos y seguir ampliando mis conocimientos en tecnologías modernas. Aspiro a convertirme en desarrollador full stack y trabajar en proyectos que generen impacto positivo.</p>
               <ul>
                 <li>Buscando mi primera experiencia profesional estable como desarrollador.</li>
                 <li>Interés en backend con Django y bases de datos SQLite/Mongodb.</li>
@@ -95,84 +99,57 @@
             <aside class="col-lg-4">
               <div class="card p-3">
                 <h6 class="mb-2">Datos rápidos</h6>
-                <p class="mb-1"><strong>Correo:</strong> dmoya1873@gmail.com</p>
-                <p class="mb-1"><strong>Teléfono:</strong> +57 313 573 2066</p>
-                <p class="mb-1"><strong>Nivel:</strong> Junior</p>
-                <p class="mb-0"><strong>Stack:</strong> Python · Django · HTML · CSS · JavaScript</p>
+                <p><strong>Correo:</strong> dmoya1873@gmail.com</p>
+                <p><strong>Teléfono:</strong> +57 313 573 2066</p>
+                <p><strong>Nivel:</strong> Junior</p>
+                <p><strong>Stack:</strong> Python · Django · HTML · CSS · JavaScript</p>
               </div>
             </aside>
           </div>
         </div>
       </section>
 
-      <!-- LENGUAJES & HABILIDADES -->
-      <section id="habilidades" class="mb-5">
-        <div class="row g-4">
-          <div class="col-lg-7">
-            <div class="card-section h-100">
-              <h3 class="h5 mb-3">Lenguajes de programación</h3>
+      <!-- PROYECTOS DINÁMICOS -->
+      <section id="proyectos" class="mb-5">
+        <div class="card-section">
+          <h3 class="h5 mb-3">Proyectos</h3>
 
-              <div class="mb-2">
-                <div class="d-flex justify-content-between">
-                  <div>Python (Django)</div>
-                  <div class="text-muted">Junior</div>
-                </div>
-                <div class="progress mb-3" style="height:10px;">
-                  <div class="progress-bar" role="progressbar" style="width:70%;" aria-valuenow="70"></div>
+          <div class="row g-3">
+
+            {% for p in proyectos %}
+            <div class="col-md-4">
+              <div class="card h-100">
+
+                {% if p.imagen %}
+              <img src="{% static 'app/img/Moya2.png' %}" class="card-img-top">
+                {% endif %}
+
+                <div class="card-body">
+                  <h5>{{ p.titulo }}</h5>
+                  <p class="small text-muted">{{ p.descripcion }}</p>
+
+                  {% if p.url %}
+                  <a href="https://github.com/DMoya-max/SIGIF-PROJECT.git" class="btn btn-sm btn-outline-primary" target="_blank">Ver</a>
+                  {% endif %}
                 </div>
 
-                <div class="d-flex justify-content-between">
-                  <div>JavaScript</div>
-                  <div class="text-muted">Junior</div>
-                </div>
-                <div class="progress mb-3" style="height:10px;">
-                  <div class="progress-bar" role="progressbar" style="width:60%;" aria-valuenow="60"></div>
-                </div>
-
-                <div class="d-flex justify-content-between">
-                  <div>HTML / CSS </div>
-                  <div class="text-muted">Intermedio</div>
-                </div>
-                <div class="progress mb-0" style="height:10px;">
-                  <div class="progress-bar" role="progressbar" style="width:75%;" aria-valuenow="75"></div>
-                </div>
               </div>
             </div>
+            {% endfor %}
+
           </div>
 
-          <div class="col-lg-5">
-            <div class="card-section h-100">
-              <h3 class="h5 mb-3">Habilidades</h3>
-
-              <div>
-                <span class="badge bg-primary skill-badge">Trabajo en equipo</span>
-                <span class="badge bg-secondary skill-badge">Resolución de problemas</span>
-                <span class="badge bg-info text-dark skill-badge">Comunicación</span>
-                <span class="badge bg-success skill-badge">Aprendizaje rápido</span>
-                <span class="badge bg-warning text-dark skill-badge">Gestión del tiempo</span>
-              </div>
-
-            </div>
-          </div>
         </div>
       </section>
 
-      <!-- PROYECTOS -->
-      <section id="proyectos" class="mb-5">
+      <!-- HABILIDADES DINÁMICAS -->
+      <section id="habilidades" class="mb-5">
         <div class="card-section">
-          <h3 class="h5 mb-3">Proyectos destacados</h3>
-          <div class="row g-3">
-            <div class="col-md-4">
-              <div class="card h-100">
-                <img src="../static/app/img/Captura de pantalla 2025-07-05 155130.png" class="card-img-top" alt="Proyecto 1">
-                <div class="card-body">
-                  <h5 class="card-title">MEDEVS-SIGIF</h5>
-                  <p class="card-text small text-muted">Sistema de gestion de facturacion e inventario</p>
-                  <a href="https://github.com/DMoya-max/SIGIF-PROJECT.git" class="btn btn-sm btn-outline-primary">Ver</a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h3 class="h5 mb-3">Habilidades técnicas</h3>
+
+          {% for h in habilidades %}
+          <span class="badge bg-primary skill-badge">{{ h.nombre }}</span>
+          {% endfor %}
         </div>
       </section>
 
@@ -180,26 +157,31 @@
       <section id="contacto" class="mb-5">
         <div class="card-section">
           <h3 class="h5 mb-3">Contacto</h3>
+
           <form action="{% url 'app:contacto' %}" method="post" class="row g-3">
-          {% csrf_token %}
+            {% csrf_token %}
             <div class="col-md-6">
               <label class="form-label">Nombre</label>
               <input class="form-control" name="nombre" required>
             </div>
+
             <div class="col-md-6">
               <label class="form-label">Correo</label>
               <input type="email" class="form-control" name="correo" required>
             </div>
+
             <div class="col-12">
               <label class="form-label">Mensaje</label>
               <textarea class="form-control" name="mensaje" rows="4" required></textarea>
             </div>
+
             <div class="col-12 text-end">
               <button class="btn btn-cta">Enviar</button>
             </div>
           </form>
         </div>
       </section>
+
     </main>
 
     <footer class="bg-white mt-4">
@@ -207,6 +189,9 @@
         <small>© 2025 Daniel Moya · Programador Junior · Colombia</small>
       </div>
     </footer>
+
+    <!-- Modo oscuro -->
     <script src="{% static 'app/js/main.js' %}"></script>
+
   </body>
 </html>

@@ -1,50 +1,142 @@
-:root{
-    --accent:#0d6efd;
-    --muted:#f6f7fb;
-    --card-bg:#ffffff;
-    --text:#222;
+/* =======================================
+   ESTILOS GENERALES
+======================================= */
+
+body {
+    background: #f7f7f7;
+    color: #222;
+    transition: 0.3s ease-in-out;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    background: linear-gradient(180deg, #f7f9fc 0%, #eef3fb 100%);
-    color:var(--text);
-    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
 }
 
-.hero {
-    background: linear-gradient(90deg, rgba(13,110,253,0.06), rgba(13,110,253,0.02));
-    border-radius: 16px;
-    padding: 36px;
+/* Tarjetas */
+.card-section {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
 }
 
+/* Avatar */
 .avatar {
-    width:140px;
-    height:140px;
-    object-fit:cover;
-    border-radius:50%;
-    border:6px solid #fff;
-    box-shadow: 0 6px 18px rgba(15,23,42,0.12);
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #eaeaea;
 }
 
-.btn-cta{
-    background: var(--accent);
-    border: none;
-    color: #fff;
+/* Botón principal */
+.btn-cta {
+    background-color: #007bff;
+    color: white !important;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: 0.2s;
 }
 
-.card-section{
-    background: var(--card-bg);
-    border-radius:12px;
-    padding:20px;
-    box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+.btn-cta:hover {
+    background-color: #0056b3;
 }
 
-.skill-badge{
-    margin-right:8px;
-    margin-bottom:8px;
+/* Badges */
+.skill-badge {
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 4px;
 }
 
-footer{
-    padding:24px 0;
-    color:#6b7280;
+/* Imagen proyectos */
+.card img {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    padding: 20px 0;
+    border-top: 1px solid #e3e3e3;
+}
+
+/* =======================================
+       🌙   MODO OSCURO REAL 
+======================================= */
+
+.dark-mode {
+    background-color: #121212 !important;
+    color: #e1e1e1 !important;
+}
+
+/* Navbar */
+.dark-mode .navbar {
+    background-color: #1e1e1e !important;
+}
+.dark-mode .nav-link {
+    color: #fff !important;
+}
+
+/* Tarjetas */
+.dark-mode .card-section,
+.dark-mode .card {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+}
+
+/* Footer */
+.dark-mode footer {
+    background-color: #1e1e1e !important;
+    color: #e1e1e1 !important;
+}
+
+/* Botones */
+.dark-mode .btn-outline-primary,
+.dark-mode .btn-outline-secondary {
+    color: #e1e1e1 !important;
+    border-color: #888 !important;
+}
+
+.dark-mode .btn-outline-primary:hover,
+.dark-mode .btn-outline-secondary:hover {
+    background-color: #333 !important;
+}
+
+/* Inputs */
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+    background-color: #2a2a2a !important;
+    color: #fff !important;
+    border-color: #555 !important;
+}
+
+/* Barra de progreso */
+.dark-mode .progress {
+    background-color: #444 !important;
+}
+
+.dark-mode .progress-bar {
+    background-color: #0d6efd !important;
+}
+
+/* Transiciones */
+.card-section,
+.card,
+.btn,
+.badge {
+    transition: 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.btn:hover {
+    opacity: 0.9;
 }
